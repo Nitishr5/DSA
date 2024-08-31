@@ -18,3 +18,26 @@ while(num!=0){
 cout<<"Total digit of number is "<<rev;
 	
 }
+
+
+
+
+
+
+//other way to reversr number it is simple------------------------------------------------------------>
+
+int main(){
+	int num;	
+	cout<<"Enter a number";
+	cin>>num;
+while(num>0){
+	int dig = num%10;
+	num= num/10;
+	
+	cout<<dig;
+}
+
+
+	
+}
+
