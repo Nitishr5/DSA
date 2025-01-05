@@ -1,6 +1,6 @@
 //in this program reverse the matrix= 
 
-//	2 3 4 5		(swap output---> 5 4 3 2
+//	2 3 4 5		(swap output--->                 5 4 3 2
 //	1 2 6 8						 8 6 2 1
 //	4 9 3 2						 2 3 9 4
 //
