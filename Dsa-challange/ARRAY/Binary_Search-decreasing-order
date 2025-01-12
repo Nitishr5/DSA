@@ -1,0 +1,38 @@
+ Binary Search in C++
+
+ An array is given in decreasing order with Key, Find the index of key, if key is not present, print -1;
+
+
+
+
+
+
+
+
+vector<int> arr = {15, 12, 10, 8, 7, 5, 3, 1}; // Decreasing order array
+    int key = 7;
+
+  int left = 0;
+    int right = arr.size() - 1;
+    
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        
+        // If key is found at mid index
+        if (arr[mid] == key) {
+            return mid;
+        }
+        
+        // Since array is decreasing, adjust the search direction
+        if (arr[mid] > key) {
+            // Move right (ignore the left side)
+            left = mid + 1;
+        } else {
+            // Move left (ignore the right side)
+            right = mid - 1;
+        }
+    }
+    
+    // If key is not found, return -1
+    return -1;
+}
