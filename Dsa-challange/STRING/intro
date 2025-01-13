@@ -1,0 +1,68 @@
+C++ Strings
+Strings are used for storing text/characters.
+
+For example, "Hello World" is a string.
+
+A string variable contains a collection of characters surrounded by double quotes:
+
+
+
+
+//EXAMPLE Of String ----------------------------------->
+
+#include<iostream>
+#include<string>
+int main()
+{
+// Create a string variable
+string greeting = "Hello";
+
+}
+
+//Print take input from user
+int main()
+{
+  string s;
+  cin>>s;
+}      //using this one problem it print only one word like "Nitish"
+
+
+//FOR PRINT MORE WORD PARAGRAPH------------------------------------>
+
+int main()
+{
+  string s;
+  cin>>s;
+  getline(cin,s);
+  cout<<s.size();    //  this print size of paragraph like in this "Nitsh raj"  this give output 10
+}  // This print a sentanse also like Nitish Raj Tiwari
+
+
+
+
+
+int main()
+{
+  string s1=Nitish,s2=Tiwari;
+  cout<<s1+s2;    // output == NitishTiwari
+
+  s1.push_back('R');  //output== NitishR
+  s1.pop_back();     //output== Nitis
+}
+
+
+
+
+//PRINT WITH "" IN OUTPUT CONSOLE SCREEN----------------------------------------------->
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    string s1 = "Nitish is a \"good\" boy";
+    cout << s1 << endl;
+    return 0;
+}            //output==============>  Nitish is a "good" boy
+
+
+
