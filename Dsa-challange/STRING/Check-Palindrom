@@ -1,0 +1,23 @@
+//palindrome== NiN
+//Not-palindrome== Nitish
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    string s1 = "Nitish";
+    int start=0, end=s1.size()-1;
+    
+    while(start<end)
+    {
+       if(s1[start]!=s1[end])
+       {
+           cout<<"Not palindrom";
+           return 0;
+       }
+        start++,end--;
+    }
+    cout<<"It is a palindrom";
+    return 0;
+}
