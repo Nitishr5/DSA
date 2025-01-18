@@ -1,0 +1,25 @@
+//Find pre defined function
+int main()
+{
+  string sentence="hello Nitish tiwari";
+  string target= "Nitish";
+  
+  cout<<sentence.find(target);
+}
+
+
+
+// Replace 
+
+string str= "This is my first message";
+str.replace(11,5,"second");
+cout<<str<<endl;                  output ----> This is my second message
+
+
+
+
+//erase()----->
+
+string str= "ABCDEFGHIJK";
+str.erase(0,4);
+cout<<str;      // output----> EFGHIJK
