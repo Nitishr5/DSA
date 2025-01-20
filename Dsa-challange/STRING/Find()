@@ -1,0 +1,17 @@
+Find()-pre-defined function----------------------------->
+
+string sentence ="Hello jee kaise hai aap";
+string target="jee";         This Return in output == 6
+
+
+if in target=ram;
+                  This is not in string it return some ==54353251 garbage value..
+
+
+
+
+
+
+if(sentence.find(target)== std::string::npos){
+  cout<<"Not Found"<<endl;
+}
