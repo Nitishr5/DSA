@@ -1,0 +1,10 @@
+Replace()-pre-defined-function
+
+
+  int main()
+{
+  string str="This is my first Message"
+  str.replace(11,5, "Second");
+  cout<<str<<endl;                
+
+  }          in output========>  This is second Message
