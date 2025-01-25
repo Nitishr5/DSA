@@ -1,0 +1,78 @@
+Write a C++ program to change every letter in a given string with the letter following it in the alphabet (i.e. a becomes b, p becomes q, z becomes a).
+Example:
+Sample Input: w3resource
+Sample Output: x3sftpvsdf
+
+
+
+
+
+
+#include <iostream>
+#include<algorithm>
+#include<string>
+using namespace std;
+
+int main()
+{
+   string str ="NITISH";
+    
+    int char_code;
+    
+    for(int x=0;x<str.length();x++)
+    {
+        char_code=int(str[x]);
+        
+        str[x]=char(char_code+1);
+    }
+    cout<<str;
+}                            OUTPUT OF THIS PROGRAM===================>   OJUJTI
+
+
+
+
+
+
+
+
+
+
+
+//Other side this check if in word no any number are present.
+//After Z value are A  and after z value are a.
+
+#include <iostream> // Including input/output stream library
+#include <string>   // Including string library for string manipulation
+using namespace std; // Using the standard namespace
+
+// Function to change characters in a string to the next character in the ASCII sequence
+string change_letter(string str) {
+
+	int char_code; // Variable to store ASCII value of characters
+
+	// Loop through each character in the string
+	for (int x = 0; x < str.length(); x++)
+	{
+		char_code = int(str[x]); // Get ASCII value of the character
+
+		// Check if the character is 'z', then change it to 'a'
+		if (char_code == 122)
+		{
+			str[x] = char(97);
+		}
+		// Check if the character is 'Z', then change it to 'A'
+		else if (char_code == 90)
+		{
+			str[x] = char(65);
+		}
+		// Check if the character is an uppercase or lowercase letter
+		else if (char_code >= 65 && char_code <= 90 || char_code >= 97 && char_code <= 122)
+		{
+			str[x] = char(char_code + 1); // Change to the next character in the ASCII sequence
+		}
+
+	}
+
+	return str; // Return the modified string
+}
+
