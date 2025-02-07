@@ -1,0 +1,27 @@
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int longestPrefixSuffix(string str) {
+    int n = str.length();
+    int maxLen = 0;  // Variable to store the maximum length of prefix-suffix
+    
+    // Iterate over possible prefix lengths from 1 to n-1
+    for (int i = 1; i < n; i++) {
+        // Compare the first 'i' characters (prefix) with the last 'i' characters (suffix)
+        if (str.substr(0, i) == str.substr(n - i, i)) {
+            maxLen = i;  // Update the length of the matching prefix-suffix
+        }
+    }
+    
+    return maxLen;  // Return the length of the longest prefix-suffix
+}
+
+int main() {
+    string str = "ABCDEABCD";  // Example string
+    int result = longestPrefixSuffix(str);
+    cout << "Longest Prefix-Suffix Length: " << result << endl;
+    return 0;
+}
