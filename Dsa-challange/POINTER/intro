@@ -1,0 +1,17 @@
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+   int a=10;
+   //Print the address of a
+   cout<<&a<<endl; //this give value in Hexadecimal form
+   
+   int *ptr=&a;
+   cout<<ptr<<endl;
+   
+   float m=2.6;
+   float*ptr1=&m; //jis type ka variable ka value hai usi type ka pointer ka bhi variable rahega
+   cout<<ptr1<<endl;
+}
