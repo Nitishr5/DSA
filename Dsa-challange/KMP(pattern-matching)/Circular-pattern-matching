@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+bool circularPatternMatch(const string& text, const string& pattern) {
+    int n = text.length();
+    int m = pattern.length();
+    
+    // Create the doubled text (concatenate the text with itself)
+    string doubledText = text + text;
+
+    // Find the pattern in the doubled text
+    size_t found = doubledText.find(pattern);
+    
+    // If the pattern is found, check if the match is within the bounds of the original string
+    if (found != string::npos && found < n) {
+        return true;
+    }
+    
+    return false;
+}
+
+int main() {
+    string text = "abcabc";
+    string pattern = "bca";
+
+    if (circularPatternMatch(text, pattern)) {
+        cout << "Pattern found in circular text." << endl;
+    } else {
+        cout << "Pattern not found in circular text." << endl;
+    }
+
+    return 0;
+}
