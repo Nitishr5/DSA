@@ -1,0 +1,22 @@
+int main()
+{
+    int arr[5]={1,2,3,4,5};
+    int *ptr=arr;
+    //int *ptr=arr+4;  this when print ptr-- like (5,4,3,2,1).
+    
+    //Arithmettic operation ptr++, ptr-- , ptr= ptr+1
+    //print all the value
+    
+     for(int i=0;i<5;i--)
+    {
+        cout<<*ptr<<" ";
+        ptr++;
+    }
+    
+    
+    for(int i=5;i>0;i--)
+    {
+        cout<<*ptr<<" ";
+        ptr--;
+    }
+}
