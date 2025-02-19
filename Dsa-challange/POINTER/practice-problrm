@@ -1,0 +1,21 @@
+// Increment num variable by 5 with the help of Pointer p
+   // Don't do num = num+5;
+   // Try to change it with the help of *p
+
+
+
+Solution---------------------------------->>>>>>
+
+int main()
+{
+   int num = 10;
+   int *p = &num;  // Pointer p stores the address of num
+
+   // Increment num by 5 using the pointer p
+   *p = *p + 5;  // Dereference p to modify the value of num through the pointer
+
+   // Output the new value of num
+   std::cout << "The value of num after incrementing by 5 is: " << num << std::endl;
+
+   return 0;
+}
