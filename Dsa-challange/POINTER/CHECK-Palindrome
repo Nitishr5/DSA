@@ -1,0 +1,27 @@
+  #include <iostream>
+  #include<string>
+  #include<algorithm>
+#include <cstring>
+using namespace std;
+
+bool isPalindrome(const char *str) {
+  // Check for palindrome   
+    int start=0;
+    int end=strlen(str)-1;
+    while (start < end) {
+        if (str[start] != str[end]) {
+            return false;  // If characters don't match, not a palindrome
+        }
+        start++;
+        end--;
+    }
+    return true;  // If all characters matched, it is a palindrome
+}
+
+int main() {
+    const char *palindrome1 = "level";
+    const char *palindrome2 = "hello";
+   cout << "Is '" << palindrome1 << "' a palindrome? " << (isPalindrome(palindrome1) ? "Yes" : "No") <<endl;
+    cout << "Is '" << palindrome2 << "' a palindrome? " << (isPalindrome(palindrome2) ? "Yes" : "No") <<endl;
+    return 0;
+}
