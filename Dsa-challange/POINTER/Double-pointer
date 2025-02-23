@@ -1,0 +1,24 @@
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n=20;
+    int *p=&n; //single pointer
+    int **p2=&p;//Double pointer
+    int ***p3= &p2;// Triple pointer
+    cout<<p<<endl;
+    cout<<p2<<endl;
+    cout<<&p2<<endl;
+    cout<<p3<<endl;
+    
+    //value ko modify krna hai, jo n me rakhi hai...
+    
+    **p2= **p2+5;
+    cout<<n<<endl;
+    
+    //modify using Triple pointer
+    ***p3= ***p3+10;
+    cout<<n<<endl;
+    
+}
