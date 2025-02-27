@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+   int n;
+   cout<<"Enter the size of Array";
+   cin>>n;
+   
+  int *p= new int[n];
+  
+  //value daalo
+  for(int i=0;i<n;i++)
+  p[i]=i+1;
+  
+  //print kra do
+    for(int i=0;i<n;i++)
+    cout<<p[i]<<endl;
+    
+    //relese memory from Heap
+    delete[] p;
+}
