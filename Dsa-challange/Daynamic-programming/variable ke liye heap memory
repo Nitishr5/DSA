@@ -1,0 +1,33 @@
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    //variable ke liye heap memory allocate karo
+    
+    int *ptr= new int;
+    *ptr=5;//assign value
+    cout<<ptr<<endl;//print address
+    cout<<*ptr<<endl;//print value
+    
+    
+    float *ptr2=new float;
+    *ptr2=3.6;
+    cout<<*ptr2<<endl;
+}      
+
+
+
+
+
+
+
+
+
+
+
+
+
+    OUTPUT========================>>>>   0X6022f55522b0
+                                          5
+                                          3.6
