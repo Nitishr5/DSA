@@ -1,0 +1,34 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+using namespace std;
+
+void printCounting(int n){
+   //base case mens Rukna kb hai
+   if(n==0)
+   {
+    return;
+   }
+   //processing
+   cout<<n<<endl;
+   
+   //recursive relation;
+   printCounting(n-1);
+}
+
+int main()
+{
+    int n;
+    cout<<"Enter the value of n"<<endl;
+    cin>>n;
+    
+     printCounting(n);
+    
+    return 0;
+}
