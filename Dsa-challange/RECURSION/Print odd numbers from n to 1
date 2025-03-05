@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+void print(int n)
+{
+    //Base case
+    
+    if(n<1)
+    {
+        cout<<1<<endl;
+        return;
+    }
+    if(n%2!=0)
+    cout<<n<<endl;
+    
+    print(n-1); //Recursively call print with n-1
+}
+int main()
+{
+    //Print odd numbers from n to 1
+    int n=50;
+    
+    print(n);
+    
+}
