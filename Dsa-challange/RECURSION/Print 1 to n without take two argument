@@ -1,0 +1,26 @@
+//Print 1 to n without take two argument
+
+#include <iostream>
+using namespace std;
+
+void print(int n)
+{
+    //Base case
+    
+    if(n==1)
+    {
+        cout<<1<<endl;
+        return;
+    }
+    
+    print(n-1);
+    cout<<n<<endl;
+}
+int main()
+{
+    //Print Even n to 1
+    int n=21;
+    
+    print(n);
+    
+}
