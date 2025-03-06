@@ -10,25 +10,29 @@ Print all numbers from 1 to n using recursion.
 
 
 
-
 #include <iostream>
 using namespace std;
-void printNumbers(int current, int n)
+
+void print(int n)
 {
-      // Base case: stop when current exceeds n
-    if (current > n) {
+    // Ensure n is even
+    if (n % 2 != 0) {
+        n--; // If n is odd, make it even by subtracting 1
+    }
+
+    // Base case: stop when n is less than or equal to 0
+    if (n <= 0)
+    {
         return;
     }
-    
-    // Print the current number
-    cout << current << endl;
-    
-    // Recursively call the function with the next number
-    printNumbers(current + 1, n);
+
+    cout << n << endl;
+    print(n - 2); // Recursively print the next even number
 }
-int main() {
-    // Write C++ code here
-    int n = 10;  // Change n to any number you want
-    printNumbers(1, n);  // Start from 1 and print numbers up to n
-    return 0;
+
+int main()
+{
+    // Print even n to 2
+    int n = 21;
+    print(n);
 }
