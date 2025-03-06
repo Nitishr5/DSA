@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+void print(int count, int n)
+{
+    //Base case
+    
+    if(count>10)
+    {
+        return;
+    }
+    
+    cout<<n*count<<endl;
+    print(count+1,n);
+}
+int main()
+{
+   
+   int n;
+   cin>>n;
+   print(1,n);
+    
+}
