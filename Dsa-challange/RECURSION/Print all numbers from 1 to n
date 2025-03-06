@@ -22,7 +22,7 @@ void print(int count, int n)
 }
 int main()
 {
-    //Print Even n to 1
+    //Print 1 to n
     int n=21;
     
     print(1,n);
