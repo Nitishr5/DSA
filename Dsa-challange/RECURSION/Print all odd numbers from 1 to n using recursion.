@@ -1,0 +1,28 @@
+Print all odd numbers from 1 to n using recursion.
+
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+void print(int count, int n)
+{
+    // Base case
+    if(count > n)
+    {
+        return;
+    }
+    
+    cout << count << endl;  // Print current value of count
+    print(count + 2, n);    // Recursive call with count incremented by 2
+}
+
+int main()
+{
+    int n = 99;  // Example value for n
+    print(1, n);  // Start printing from 1
+}
