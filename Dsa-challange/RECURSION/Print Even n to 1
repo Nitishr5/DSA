@@ -1,24 +1,29 @@
+Print Even number n to 1
+
+
 #include <iostream>
 using namespace std;
 
 void print(int n)
 {
-    //Base case
-    
-    if(n==2)
+    // Ensure n is even
+    if (n % 2 != 0) {
+        n--; // If n is odd, make it even by subtracting 1
+    }
+
+    // Base case: stop when n is less than or equal to 0
+    if (n <= 0)
     {
-        cout<<2<<endl;
         return;
     }
-    
-    cout<<n<<endl;
-    print(n-2);
+
+    cout << n << endl;
+    print(n - 2); // Recursively print the next even number
 }
+
 int main()
 {
-    //Print Even n to 1
-    int n=20;
-    
+    // Print even n to 2
+    int n = 21;
     print(n);
-    
 }
