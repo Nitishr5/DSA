@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class Solution {
+  public:
+    // Function to return sum of elements
+    int sum(int arr[], int n) {
+        if (n == 0) return 0;
+        return arr[n - 1] + sum(arr, n - 1);
+    }
+};
+
+int main() {
+    Solution sol;
+    
+    // Example array
+    int arr[] = {1, 2, 3, 4, 5};
+    int n = sizeof(arr) / sizeof(arr[0]); // Calculate the number of elements in the array
+    
+    // Call the sum function with the correct name
+    int ans = sol.sum(arr, n);
+    
+    // Print the result
+    cout << "Sum of elements: " << ans << endl;
+    
+    return 0;
+}
