@@ -1,0 +1,27 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+void printCounting(int n)
+{
+//Base case
+if(n==0)
+{
+    return ;
+}
+//processing 
+cout<<n<<" ";
+//recursive relation
+printCounting(n-1);
+}
+
+
+int main() {
+    // Write C++ code here
+   int n;
+   cout<<"Enter the value of n"<<endl;
+   cin>>n;
+   
+   printCounting(n);
+   cout<<endl;
+   return 0;
+}
