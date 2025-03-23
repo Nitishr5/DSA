@@ -1,0 +1,22 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+int consonent(string str,int index){
+    //base case
+    if(index==-1)
+    return 0;
+    
+    if ((str[index] != 'a' && str[index] != 'e' && str[index] != 'i' && str[index] != 'o' && str[index] != 'u') 
+        && (str[index] >= 'a' && str[index] <= 'z' || str[index] >= 'A' && str[index] <= 'Z')) 
+
+    return 1+consonent(str,index-1);
+    else
+    return consonent(str,index-1);
+}
+
+int main()
+{
+    string str="nitish";
+    cout<<consonent(str,5);
+}
