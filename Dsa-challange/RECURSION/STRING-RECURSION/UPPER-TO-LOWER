@@ -1,0 +1,23 @@
+NITISH=====>nitish
+
+#include <iostream>
+using namespace std;
+
+void upperCase(string &n,int index)
+{
+    if(index==-1)
+    return;
+    
+    // n[index] = n[index] - 'a'+'A';
+      if (n[index] >= 'A' && n[index] <= 'Z') {
+        // Convert uppercase to lowercase
+        n[index] = n[index] - 'A' + 'a';
+    }
+    upperCase(n,index-1);
+}
+int main() {
+    // Write C++ code here
+    string n="NITISH";
+    upperCase(n,5);
+    cout<<n<<endl;
+}
