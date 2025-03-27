@@ -1,0 +1,22 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+void reverse(string &str,int i,int j){
+    //base case
+    if(i>j)
+        return;
+        
+        swap(str[i],str[j]);
+        i++;
+        j--;
+        
+        //Recursion sambhal lega
+        reverse(str,i,j);
+}
+int main() {
+    // Write C++ code here
+  string name="Nitish";
+  
+  reverse(name,0,name.size()-i-1);
+  cout<<name<<" ";
+}
