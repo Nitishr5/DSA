@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int recLen(string str)
+{
+    // Base case: If the string is empty
+    if (str == "")
+        return 0;
+    return 1 + recLen(str.substr(1));
+}
+
+// Driver code
+int main()
+{
+    string str = "GeeksforGeeks";
+    cout << recLen(str) << endl;
+    return 0;
+}
