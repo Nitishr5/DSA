@@ -1,0 +1,26 @@
+EX= Input: 12345
+Output: 15
+Explanation: Sum of digits → 1 + 2 + 3 + 4 + 5 = 15
+
+
+Input: 45632
+Output: 20 
+
+
+
+
+
+#include <iostream>
+using namespace std;
+int sum(int n){
+    if(n==0)
+    return 0;
+    return(n%10 + sum(n/10));
+}
+int main() {
+    // Write C++ code here
+   int n=12345;
+   int result=sum(n);
+   cout<<result;
+   return 0;
+}
