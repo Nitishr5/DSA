@@ -1,0 +1,23 @@
+// when we print size of Animal this print 12 byte
+// because | age (4 bytes) | numbers (4 bytes) | name (1 byte) | Padding (3 bytes) | =12 byte
+
+
+
+
+class Animal {
+public:
+    int age;
+    int numbers;
+    char name;
+};
+
+
+
+
+In this class, we have three data members: age and numbers of type int, and name of type char.
+
+Now, when we create an instance of Animal and check its size using sizeof(Animal), we might expect the size to be 9 bytes (4 bytes for age, 4 bytes for numbers, and 1 byte for name). However, due to memory alignment requirements and padding, the size might surprise you.
+
+When you run the code, the output shows that the size of Animal is 12 bytes. Why?
+
+This discrepancy arises due to padding and greedy alignment. Most compilers align data members on word boundaries for performance reasons. In this case, both int data members (age and numbers) require alignment on a 4-byte boundary, and char typically aligns on a 1-byte boundary.
