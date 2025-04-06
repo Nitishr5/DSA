@@ -1,0 +1,64 @@
+constructor call when object create.
+constructor no return type ,
+no input parameter
+
+default constructor(inbuild) = it called by default when object creat automatically call.
+
+class Hero{
+public:
+Hero(){ //Default constructor
+    cout<<"Constructor called"<<endl;
+}
+};
+int main() {
+    // Write C++ code here
+    Hero ramesh;
+  
+}
+
+
+when we write any constructor defult constructor is destroyd.
+
+THEIR ARE 3 TYPE OF CONSTRUCTOR 
+1. Default Constructor
+2. Copy Constructor
+3. Parametrised Constructor
+
+
+
+2.Parameterized Constructors---------->
+
+C++ parameterized constructor is a constructor, which accepts one or more arguments or parameters, to initialize an object with specific values, when created.
+
+EX-
+  #include <iostream>
+using namespace std;
+
+class MyClass {
+   public:
+      int a, b;
+
+      // Parameterized constructor with two arguments
+      MyClass(int x, int y) {
+         a = x;  // Initialize 'a' with the value of 'x'
+         b = y;  // Initialize 'b' with the value of 'y'
+         cout << "Parameterized constructor called" << endl;
+      }
+
+      // Method to display values of 'a' and 'b'
+      void display() {
+         cout << "a: " << a << ", b: " << b << endl;
+      }
+};
+
+int main() {
+   MyClass obj1(10, 20);  // Calls the parameterized constructor with 10 and 20
+   obj1.display();   // Output: a: 10, b: 20
+
+   return 0;
+}
+
+
+Output =========>
+Parameterized constructor called
+a: 10, b: 20
