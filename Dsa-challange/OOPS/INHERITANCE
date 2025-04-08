@@ -1,0 +1,61 @@
+Inheritance
+In C++, it is possible to inherit attributes and methods from one class to another. We group the "inheritance concept" into two categories:
+
+derived class (child) - the class that inherits from another class
+base class (parent) - the class being inherited from
+
+
+* inheritance syntax:-
+class parent_class{//parent class
+            //body of parent class
+}
+
+class child_class:access-modifier parent_class{
+        //body of child class
+}
+
+
+
+----------TYPE OF INHERITANCE----------------------->
+1. Single inheritance
+2. multilevel inheritance
+3. multiple inheritance
+4. Hierarchical inheritance
+5. Hybrid inheritance
+
+
+
+
+
+
+* inheritance Ambiguity=================================>>>>  iska use agar Base class me same naam se function ho to usko inherit kr ke kaise kaam krna hai using scope resulation operator (::).
+
+example--->
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+class A{
+    public:
+    
+    void func(){
+        cout<<"I am A"<<endl;
+    }
+};
+class B{
+    public:
+    void func(){
+        cout<<"I am B"<<endl;
+    }
+};
+class C:public A,public B{
+    
+};
+int main() {
+  
+    C obj;
+    // obj.func();
+    obj.A::func(); //for call specfic function 2 function with same name.
+    
+   
+}
