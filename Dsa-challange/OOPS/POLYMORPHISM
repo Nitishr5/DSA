@@ -1,0 +1,9 @@
+Polymorphism
+Polymorphism means "many forms", and it occurs when we have many classes that are related to each other by inheritance.
+
+example of many form==> one father kisi ka bhai bhi ho sakta hai / kisi ka husband bhi ho sakta hai /kisi ka son bhi ho sakta hai , means one person in many forms.
+
+
+============ TYPE OF POLYMERPHISM=======>
+1. compile time polymorphism.
+2. Run time polymorphism.
