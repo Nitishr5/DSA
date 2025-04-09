@@ -7,3 +7,6 @@ example of many form==> one father kisi ka bhai bhi ho sakta hai / kisi ka husba
 ============ TYPE OF POLYMERPHISM=======>
 1. compile time polymorphism.
 2. Run time polymorphism.
+
+
+Compile time polymorphism has two part=>  1. function overloading, 2. operator overloading.
