@@ -143,3 +143,126 @@ int main() {
   
   return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DELETE NODE ================================================================>>>>
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class Node{
+    public:
+    int data;
+    Node* next;
+    
+    //constructor
+    Node(int data){
+        this->data=data;
+        this->next=NULL;
+    }
+    
+    //destructor
+    ~Node(){
+        int value=this->data;
+        //memory free
+        if(this->next!=NULL){
+            delete next;
+            this->next=NULL;
+        }
+        cout<<"Memory is free for node with data "<<value<<endl;
+    }
+};
+
+
+void insertAtHead(Node* &head,int d){
+    //new node create
+    Node* temp=new Node(d);
+    temp->next=head;
+    head=temp;
+}
+
+void insertAtTail(Node* &tail, int d){
+    Node* temp=new Node(d);
+    tail->next = temp;
+    tail=temp;
+}
+
+void print(Node* &head){
+    Node* temp=head;
+    
+    while(temp !=NULL){ //for print all elemnt
+        cout<<temp->data<<" ";
+        temp=temp->next;
+    }
+    cout<<endl;
+}
+
+void deleteNode(int position,Node* &head){
+    //deleting first or start node
+    if(position == 1){
+        Node* temp=head;
+        head = head->next;
+        //memory free start node
+        temp->next=NULL;
+        delete temp;
+    }
+    else{
+        //deleting any middle node or last node
+        Node* curr=head;
+        Node* prev=NULL;
+        
+        int cnt=1;
+        while(cnt<position){
+            prev=curr;
+            curr=curr->next;
+            cnt++;
+        }
+        prev->next=curr->next;
+        curr->next=NULL;
+        delete curr;
+    }
+}
+int main() {
+    //Create a new node
+  Node* node1= new Node(10);//add/create new node
+
+  
+  //head pointed to node1
+  Node* head=node1;
+  Node* tail=node1;
+  print(head);
+  
+  insertAtTail(tail,12);// new node
+  
+  print(head);
+  
+   insertAtTail(tail,15);
+   print(head);
+   
+   insertAtTail(tail,25);
+   print(head);
+   
+  deleteNode(2,head);
+  print(head);
+  
+//   cout<<"head"<<head ->data<<endl;
+//   cout<<"tail"<<tail->data<<endl;
+  return 0;
+}
