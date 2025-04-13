@@ -1,1 +1,140 @@
 Doubly link-list have to pointer in left side previous node Address and right side next side next node Address.
+
+
+code for------------->>>>>>>>>>>
+1. insertAtHead
+2. insertAtTail
+3. insertAtPosition
+
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+    // Write C++ code here
+   class Node{
+       public:
+       int data;
+       Node* prev;
+       Node* next;
+       
+       
+       //constructor
+       Node(int d){
+           this->data=d;
+           this->prev=NULL;
+           this->next=NULL;
+       }
+   };
+   //Traversing a linklist 
+   void print(Node* head){
+       Node* temp=head;
+       
+       while(temp!=NULL){
+           cout<<temp->data<<" ";
+           temp=temp->next;
+       }
+       cout<<endl;
+   }
+   
+   //print the size of Linklist
+   int getLength(Node* head){
+       int len=0;
+          Node* temp=head;
+       
+       while(temp!=NULL){
+           len++;
+           temp=temp->next;
+       }
+       return len;
+   }
+   
+   void insertAtHead(Node* &head,int data){
+       
+       //new node create
+       Node* temp=new Node(data);
+       temp->next=head;
+       head->prev=temp;
+       head=temp;
+   }
+   //insert ata tail function -------
+   void insertAtTail(Node* &tail,int data){
+       Node* temp=new Node(data);
+       tail->next=temp;
+       temp->prev=tail;
+       tail=temp;
+   }
+   
+   void insertAtPosition(Node* &tail,Node* &head,int position,int data){
+       
+       //insert at start
+       if(position == 1){
+           insertAtHead(head,data);
+           return;
+       }
+       
+       Node* temp=head;
+       int cnt=1;
+       
+       while(cnt<position-1){
+           temp=temp->next;
+           cnt++;
+       }
+       //inserting at Last position
+       if(temp->next ==NULL){
+           insertAtTail(tail,data);
+           return;
+       }
+       
+       //creating a node for data
+       Node* nodeToInsert = new Node(data);
+       nodeToInsert->next=temp->next;
+       temp->next->prev=nodeToInsert;
+       temp->next=nodeToInsert;
+       nodeToInsert->prev=temp;
+   }
+   int main(){
+       //this create a node..
+       Node* node1=new Node(10);
+       Node* head=node1;
+       Node* tail=node1;
+       print(head);
+       cout<<getLength(head)<<endl;
+       
+       //insert at head 
+       insertAtHead(head,11);
+       print(head);
+       
+       insertAtHead(head,23);
+       print(head);
+       
+       insertAtTail(tail,76);
+       print(head);
+       
+       insertAtPosition(tail,head,2,100);
+       print(head);
+       
+        insertAtPosition(tail,head,1,190);
+       print(head);
+       
+        insertAtPosition(tail,head,7,200);
+       print(head);
+       return 0;
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AND OTHER IS IF AT STARTING NODE HEAD & TAIL IS== NULL IN THESE CASE
