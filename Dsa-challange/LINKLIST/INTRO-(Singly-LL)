@@ -14,6 +14,44 @@ Circular Linked List
 
 
 
+//NORMAL CREATE A NODE AND PRINT THEIR VALUE
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class NODE{
+    public:
+    int data;
+    NODE*next;
+    
+    NODE(int value)//constructor for input data
+    {
+        data=value;
+        next=NULL;
+    }
+};
+
+void print(NODE* &HEAD){
+    NODE* temp=HEAD;
+    while(temp!=NULL){
+        cout<<temp->data;
+        // temp=temp->next;
+    }
+}
+int main() {
+    NODE* HEAD;
+    HEAD=new NODE(4);
+    print(HEAD);
+}
+
+
+
+
+
+
+
+
+
 
 
 
