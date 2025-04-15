@@ -1,0 +1,33 @@
+206. Reverse Linked List
+LEET-CODE SOLUTION
+
+
+
+Input: head = [1,2]
+Output: [2,1]
+Example 3:
+
+Input: head = []
+Output: []
+
+
+
+
+CODE-PART==============================================================>>>>>
+
+
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        ListNode* prev=NULL;
+        ListNode* curr=head;
+        // ListNode* forword=NULL;
+        while(curr!=NULL){
+          ListNode*  forword=curr->next;
+            curr->next=prev;
+            prev=curr;
+            curr=forword;
+        }
+        return prev;
+    }
+};
