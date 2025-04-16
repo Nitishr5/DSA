@@ -1,0 +1,38 @@
+Leet-code===> 876. Middle of the Linked List
+
+in this we take two pointer 1. slow, 2. fast
+slow==> point in start head value , slow traverse 1 step.
+fast==> point in start head next value , fast traverse 2 step.
+
+FIND MIDDLE WORK THESE STEP
+
+1. if empty Node=>return Null
+2. if one size node=> return head
+3.agar 2 Node hoga to 2nd wala node return kr dena hai 
+4.Algoritham. (nichhe likha hai).
+
+
+class Solution {
+public:
+    ListNode* middleNode(ListNode* head) {
+
+        if(head==NULL||head->next==NULL){
+            return head;
+        }
+        //if Node size is 2 return second middle node.
+        if(head->next->next==NULL){
+            return head->next;
+        }
+        ListNode* slow=head;
+         ListNode* fast=head->next;
+
+         while(fast!=NULL){
+            fast=fast->next; //1 step
+            if(fast!=NULL){ //fast ko 2 step badhana hai jb tk NULL N aay
+                fast=fast->next;//2nd step
+            }
+            slow=slow->next;// slow ko 1 step badhana hai
+         }
+         return slow;
+    }
+};
