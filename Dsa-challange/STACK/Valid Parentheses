@@ -1,0 +1,144 @@
+class Solution {
+public:
+    bool isValid(string s) {
+        stack<char> sq;
+        for(int i=0;i<s.length();i++)
+        {
+            char ch=s[i];
+LEET-CODE=20.
+
+
+            //if opening bracket, stack push
+            //if close bracket, stacktop check an pop
+
+            if(ch=='(' || ch=='{' ||ch=='['){
+                sq.push(ch);
+            }
+            else{
+                //for closing bracket
+                    if(!sq.empty()){
+                char top=sq.top();
+                if((ch==')' && top=='(') ||
+                (ch=='}' && top=='{') ||
+                (ch==']' && top == '[')){
+                    sq.pop();
+                }
+                else{
+                    return false;
+                }
+            }
+            else{
+                return false;
+            }
+        }
+    }
+
+   return sq.empty();
+}
+};
+
+
+
+
+
+
+
+
+
+
+DRY RUN & EXPLAIN===================================================================================================================>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+
+
+
+
+📘 Problem Statement:
+Check karo ki string me jo brackets hain (()[]{}), wo properly closed and nested hain ya nahi.
+
+🔍 Samjho Step by Step:
+🔸 1. stack<char> sq;
+Stack banaya jisme hum brackets ko store karenge.
+
+Opening bracket ko push karenge.
+
+Jab closing bracket aaye, toh top ko check karenge.
+
+🔸 2. Loop se har character check kar rahe hain:
+cpp
+Copy
+Edit
+char ch = s[i];
+Agar opening bracket hai: (, {, [ → stack me push karo
+
+cpp
+Copy
+Edit
+if(ch=='(' || ch=='{' || ch=='['){
+    sq.push(ch);
+}
+🔸 3. Closing bracket ke case me:
+cpp
+Copy
+Edit
+else {
+    if (!sq.empty()) {
+        char top = sq.top();  // upar ka element lo
+Phir check karo:
+
+Kya current closing bracket uske matching opening bracket ke sath pair bana raha hai?
+
+cpp
+Copy
+Edit
+if ((ch == ')' && top == '(') ||
+    (ch == '}' && top == '{') ||
+    (ch == ']' && top == '[')) {
+    sq.pop();  // sahi match mila, pop karo
+}
+❌ Else agar match nahi mila:
+Mismatched bracket hai, toh string valid nahi:
+
+cpp
+Copy
+Edit
+else {
+    return false;
+}
+❌ Aur agar stack already empty ho:
+Bracket band ho raha hai bina open kiye: invalid
+
+cpp
+Copy
+Edit
+else {
+    return false;
+}
+✅ Last me check:
+cpp
+Copy
+Edit
+return sq.empty();
+Agar stack empty hai → saare brackets properly closed the → return true
+
+Agar kuch bracket bach gaya stack me → return false
+
+🔁 Example Dry Run:
+For input: "({[]})"
+
+
+Step	Char	Stack	Action
+1	(	(	push
+2	{	({	push
+3	[	({[	push
+4	]	({	pop (match)
+5	}	(	pop (match)
+6	)	empty	pop (match)
+✅ Final: stack empty → valid string
+
+🔚 Final Thoughts:
+Love Babbar bhai fast sikhate hain, but agar tu concept samajh le toh code kaafi easy lagta hai.
+Ye code bas ye check karta hai:
+
+"Jitne open brackets hain, kya unke proper close brackets mile bhi?"
