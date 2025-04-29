@@ -1,0 +1,37 @@
+Input: s = [10, 20, 30, 40, 50]
+Output: [50, 40, 20, 10]
+Explanation: The bottom-most element will be 10 and the top-most element will be 50. Middle element will be element at index 3 from bottom, which is 30. Deleting 30, stack will look like {10 20 40 50}.
+
+
+NOTE==> DETAIL EXPLAIN I WRITE ON COPY (LOVE-BABBAR)
+
+
+
+
+
+
+
+
+class Solution {
+  public:
+  void solve(stack<int>&inputStack, int count,int size){
+      //base case
+      if(count==size/2){
+          inputStack.pop();
+          return;
+      }
+      
+      int num=inputStack.top();// ye upar ka value ko side me nikal kr store kr lenge jb tk middle wala value delete  na aay
+      inputStack.pop();
+      
+      //RECURSIVE CALL
+      solve(inputStack,count+1,size);
+      
+      inputStack.push(num); //jb middle ko delete kra denge tb jo value side me nikale the usko daal denge stack me
+  }
+    // Function to delete middle element of a stack.
+    void deleteMid(stack<int>&inputStack) {
+        int count=0;
+        solve(inputStack,count,inputStack.size());
+    }
+};
