@@ -1,0 +1,46 @@
+nput:
+n = 5
+x = 2
+st = {4,3,2,1,8}
+Output:
+{2,4,3,2,1,8}
+Explanation:
+After insertion of 2, the final stack will be {2,4,3,2,1,8}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Solution {
+  public:
+  void Solve(stack<int>& s, int x) {
+    // base case: jab stack empty ho gaya ho
+    if (s.empty()) {
+        s.push(x);  // bottom pe insert karo
+        return;
+    }
+
+    // step 1: top element hatao
+    int num = s.top();
+    s.pop();
+
+    // step 2: recursion se bottom tak jao
+    Solve(s, x);
+
+    // step 3: jo element nikala tha, wapas daal do
+    s.push(num);
+}
+    stack<int> insertAtBottom(stack<int> s, int x) {
+        
+        Solve(s,x);
+        return s;
+    }
+};
