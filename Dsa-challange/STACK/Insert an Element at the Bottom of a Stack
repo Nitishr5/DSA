@@ -11,6 +11,20 @@ After insertion of 2, the final stack will be {2,4,3,2,1,8}.
 
 
 
+APPROCH=================>>>>>>>>>
+
+💡 Idea:
+Stack ke bottom me value daalne ka simple trick:
+
+Stack ke top elements ko temporarily pop karo
+
+Jab stack empty ho jaye → bottom mil gaya → wahan value insert karo
+
+Phir jo elements upar se nikale the → wapis push kar do (stack restore)
+
+
+
+
 
 
 
