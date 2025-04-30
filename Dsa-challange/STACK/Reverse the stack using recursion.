@@ -1,0 +1,57 @@
+Input:
+St = {3,2,1,7,6}
+Output:
+{6,7,1,2,3}
+Explanation:
+Input stack after reversing will look like the stack in the output.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Solution {
+  public:
+  void insertAtBottom(stack<int> &s, int element)
+  {
+      //base case 
+      if(s.empty())
+      {
+          s.push(element);
+          return;
+      }
+      int num=s.top();
+      s.pop();
+      
+      //recursive call
+      insertAtBottom(s,element);
+      
+      s.push(num);
+  }
+    void Reverse(stack<int> &stack) {
+        //base case
+        if(stack.empty()){
+            return;
+        }
+        
+        int num=stack.top();
+        stack.pop();
+        
+        //recursive call
+        Reverse(stack);
+        
+        insertAtBottom(stack,num);
+    }
+};
