@@ -142,3 +142,59 @@ Love Babbar bhai fast sikhate hain, but agar tu concept samajh le toh code kaafi
 Ye code bas ye check karta hai:
 
 "Jitne open brackets hain, kya unke proper close brackets mile bhi?"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+other Approch / same but style change
+
+
+
+
+
+class Solution {
+public:
+    bool isValid(string s) {
+        stack<char> st;
+        for(int i=0;i<s.size();i++)
+        {
+            if(s[i]=='('||s[i]=='{'||s[i]=='[')
+            {
+                st.push(s[i]);
+            }else{
+                if(st.size()==0)
+                {
+                    return false;
+                }
+                if((st.top()=='(' && s[i]==')') || 
+                  (st.top()=='{' && s[i]=='}') ||
+                  (st.top()=='[' && s[i]== ']')) {
+                    st.pop();
+                  }
+                  else{
+                    return false;
+                  }
+
+            }
+           
+        }
+        return st.size()==0;
+    }
+};
