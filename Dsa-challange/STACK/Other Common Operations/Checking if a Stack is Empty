@@ -1,0 +1,28 @@
+#include <iostream>
+#include <stack>
+using namespace std;
+
+int main()
+{
+    // Creating a stack
+    stack<int> mystack;
+
+    // Checking if stack is empty
+    if (mystack.empty())
+        cout << "Stack is empty\n";
+    else
+        cout << "Stack is not empty\n";
+
+    // Adding elements to the stack
+    mystack.push(10);
+    mystack.push(20);
+    mystack.push(30);
+
+    // Again Checking if stack is empty
+    if (mystack.empty())
+        cout << "After Updation Stack is empty\n";
+    else
+        cout << "After Updation Stack is not empty\n";
+
+    return 0;
+}
