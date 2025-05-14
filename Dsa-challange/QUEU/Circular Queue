@@ -1,0 +1,142 @@
+✅ Why Circular Queue?------------------->
+
+
+
+
+✅ Problem with Normal Queue (Array-based)
+Imagine:
+You have an array of size 5.
+
+Initially:
+
+Index:     0   1   2   3   4
+Array:   [ -  -  -  -  - ]
+Front = 0
+Rear  = -1
+After 5 enqueue operations:
+
+
+Array:   [10 20 30 40 50]
+Front = 0
+Rear  = 4
+Now 2 dequeue operations:
+
+
+Array:   [10 20 30 40 50]
+          ↑  ↑
+        (deleted but still occupies memory)
+
+Front = 2
+Rear  = 4
+Now, try to enqueue(60).
+You get an error: Queue is full, even though index 0 and 1 are empty.
+
+❌ This is wasted space — because rear has reached the end, but free slots at the front can’t be reused.
+
+
+
+
+
+
+
+
+Let's go step by step:
+Initial:
+
+
+Array:   [ -  -  -  -  - ]
+Front = 0
+Rear  = -1
+After enqueue 10, 20, 30, 40, 50:
+
+
+Array:   [10 20 30 40 50]
+Front = 0
+Rear  = 4
+After 2 dequeues:
+
+
+Front = 2
+Rear  = 4
+Now enqueue(60):
+
+
+rear = (4 + 1) % 5 = 0
+Array becomes: [60 20 30 40 50]
+Rear = 0
+⬆️ It reused the freed index 0 — that’s why it’s called a circular queue.
+
+
+
+
+
+#include <iostream>
+#include <deque>
+using namespace std;
+
+class CircularQueue {
+    deque<int> dq;
+    int capacity;
+
+public:
+    CircularQueue(int k) {
+        capacity = k;
+    }
+
+    bool enqueue(int value) {
+        if (dq.size() == capacity) return false;
+        dq.push_back(value);
+        return true;
+    }
+
+    bool dequeue() {
+        if (dq.empty()) return false;
+        dq.pop_front();
+        return true;
+    }
+
+    int Front() {
+        if (dq.empty()) return -1;
+        return dq.front();
+    }
+
+    int Rear() {
+        if (dq.empty()) return -1;
+        return dq.back();
+    }
+
+    bool isEmpty() {
+        return dq.empty();
+    }
+
+    bool isFull() {
+        return dq.size() == capacity;
+    }
+};
+
+int main() {
+    CircularQueue cq(3);
+
+    cq.enqueue(1);
+    cq.enqueue(2);
+    cq.enqueue(3);
+    cout << "Front: " << cq.Front() << "\n";
+    cout << "Rear: " << cq.Rear() << "\n";
+
+    cq.dequeue();
+    cq.enqueue(4);
+
+    cout << "Front after dequeue: " << cq.Front() << "\n";
+    cout << "Rear after enqueue: " << cq.Rear() << "\n";
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
