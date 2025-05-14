@@ -1,0 +1,31 @@
+Input: q[] = [4 3 1 10 2 6]
+Output: [6, 2, 10, 1, 3, 4]
+Explanation: After reversing the given elements of the queue, the resultant queue will be 6 2 10 1 3 4.
+
+
+
+NOTE==> THIS IS SAME AS WE REVERSE A STACK 1st PUSH ALL ELEMENT IN STACK AND POP THEM THAT COME IN REVERSE ORDER
+
+
+
+
+class Solution {
+  public:
+    queue<int> reverseQueue(queue<int> &q) {
+        // code here.
+        stack<int>s;
+        
+        while(!q.empty()){ // ye queue me se element nikal kr ke stack me daal dega.
+            int element= q.front();
+            q.pop();
+            s.push(element); //push in stack
+        }
+        
+        while(!s.empty()){
+            int element= s.top();
+            s.pop();
+            q.push(element);
+        }
+        return q;
+    }
+};
