@@ -1,0 +1,90 @@
+Input: q = [1, 2, 3, 4, 5], k = 3
+Output: [3, 2, 1, 4, 5]
+Explanation: After reversing the first 3 elements from the given queue the resultant queue will be 3 2 1 4 5
+
+
+
+📌 Example se samjhte hain:
+Input Queue: q = [10, 20, 30, 40, 50]
+k = 3
+
+🔁 After Step 1 and 2:
+Stack se pehle 3 elements (10, 20, 30) ko reverse karke queue mein daal diya:
+
+Queue ab: [40, 50, 30, 20, 10]
+
+Pehle 3 element reverse toh ho gaye — but ab position galat hai. 40 aur 50 queue ke front mein hain, jabki woh end mein hone chahiye.
+
+✅ STEP 3 Objective:
+Ab humein ye karna hai:
+
+Queue ke first (n - k) = 2 elements (40, 50) ko uthake queue ke end mein bhejna hai.
+
+Taaki order ban jaaye: [30, 20, 10, 40, 50]
+
+🔁 Execution:
+Queue: [40, 50, 30, 20, 10]
+(n-k) = 2
+
+We run a loop t = q.size() - k = 5 - 3 = 2
+
+cpp
+Copy
+Edit
+while(t--) {
+    int val = q.front();   // get 40, then 50
+    q.pop();               // remove from front
+    q.push(val);           // insert at rear
+}
+Loop 1:
+Front = 40 → pop it → push to back
+→ Queue = [50, 30, 20, 10, 40]
+
+Loop 2:
+Front = 50 → pop it → push to back
+→ Queue = [30, 20, 10, 40, 50]
+
+🎯 Final Queue:
+[30, 20, 10, 40, 50] ✅
+
+
+
+
+
+
+class Solution {
+  public:
+    queue<int> reverseFirstK(queue<int> q, int k) {
+        // code here
+          // Check for invalid k
+        if (k > q.size() || k < 0) return q;
+
+        // step1: pop first k from Q and put into stack
+        stack<int> s;
+        
+        for(int i=0;i<k;i++)
+        {
+            int val=q.front();
+            q.pop();
+            s.push(val);
+        }
+        
+        // step 2: fetch  from stack and push into q
+        while(!s.empty()){
+            int val= s.top();
+            s.pop();
+            q.push(val);
+        }
+        
+        //step3: fetch first (n-k) element from Q and push back
+        
+        int t=q.size()-k;
+        
+        while(t--){
+            int val= q.front();
+            q.pop();
+            q.push(val);
+        }
+        return q;
+    }
+};
