@@ -1,0 +1,68 @@
+✅ Binary Tree Basics – 
+🔹 1. What is a Tree?
+Tree is a non-linear data structure.
+
+It is made of nodes connected by edges.
+
+One root node at the top — and everything grows from there like a real tree 🌳.
+
+🔹 2. What is a Binary Tree?
+A tree where each node can have at most 2 children.
+
+Those two are usually called:
+
+left child
+
+right child
+
+🔸 Example:
+
+markdown
+Copy
+Edit
+       1
+      / \
+     2   3
+    / \
+   4   5
+Here:
+
+1 is the root.
+
+2 and 3 are its children.
+
+4 and 5 are children of 2.
+
+🔹 3. Key Terms:
+Term	Meaning
+Root	Starting point of the tree. Only one.
+Leaf	Node with no children (like 4, 5, 3 above).
+Parent	A node that has children (1, 2 in example).
+Child	Node that comes from a parent (2, 3 are children of 1).
+Subtree	A smaller tree from any node (like whole tree under 2).
+Height	Max distance from root to leaf. (In example, height = 2).
+Depth	Distance from root to that node. (Depth of root = 0).
+
+🔹 4. Types of Binary Trees:
+Type	Rule
+Full	Every node has 0 or 2 children
+Complete	All levels filled except last, and filled left to right
+Perfect	All leaves at same level, and every node has 2 children
+Skewed	All nodes go in one direction (left or right only)
+
+🔹 5. Why Use Binary Trees?
+Trees are good for hierarchical data (like folders, org charts).
+
+They're used in:
+
+Binary Search Trees
+
+Heaps
+
+Expression trees
+
+Databases
+
+Compilers
+Footer
+©
