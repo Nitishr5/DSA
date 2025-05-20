@@ -1,0 +1,20 @@
+void levelOrderTraversal(Node* root) {
+    if (root == nullptr) return;
+
+    queue<Node*> q;         // Use pointer type
+    q.push(root);
+
+    while (!q.empty()) {
+        Node* temp = q.front();  // Use capital 'N' and pointer
+        q.pop();
+
+        cout << temp->data << " ";  // Use correct syntax: -> not =>
+
+        if (temp->left) {
+            q.push(temp->left);
+        }
+        if (temp->right) {
+            q.push(temp->right);
+        }
+    }
+}
