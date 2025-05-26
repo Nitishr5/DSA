@@ -86,3 +86,65 @@ int main() {
 
 
 
+void preorderIterative(TreeNode* root) {
+    if (root == nullptr) return;
+
+    stack<TreeNode*> st;
+    st.push(root);
+
+    while (!st.empty()) {
+        TreeNode* node = st.top();
+        st.pop();
+        cout << node->val << " ";
+
+        // Right child pushed first so left is processed first
+        if (node->right) st.push(node->right);
+        if (node->left) st.push(node->left);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void postorderIterative(TreeNode* root) {
+    if (!root) return;
+
+    stack<TreeNode*> s1, s2;
+    s1.push(root);
+
+    while (!s1.empty()) {
+        TreeNode* node = s1.top(); s1.pop();
+        s2.push(node);
+
+        if (node->left) s1.push(node->left);
+        if (node->right) s1.push(node->right);
+    }
+
+    while (!s2.empty()) {
+        cout << s2.top()->val << " ";
+        s2.pop();
+    }
+}
