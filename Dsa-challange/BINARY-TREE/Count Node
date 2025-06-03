@@ -41,7 +41,7 @@ int count(Node* root){
   int  leftCount=count(root->left);
   int  rightCount=count(root->right);
     
-    return leftCount+rightCount+1;
+    return leftCount+rightCount+1; //in last +1 for root node
 }
 int main() {
     // Write C++ code here
