@@ -1,0 +1,51 @@
+class Solution {
+    private:
+    int maxDiameter=0;
+
+    int height(TreeNode* root){
+        if(root==NULL) return 0;
+
+        int leftHeight= height(root->left);
+        int rightHeight= height(root->right);
+
+        //update the diameter at this node
+        maxDiameter = max(maxDiameter, leftHeight + rightHeight);
+
+        //Return height of current node
+        return 1 + max(leftHeight,rightHeight);
+    }
+public:
+    int diameterOfBinaryTree(TreeNode* root) {
+        height(root);
+        return maxDiameter;
+    }
+};
+
+
+
+
+
+
+
+
+
+
+🔷 Example:
+Consider this binary tree:
+
+markdown
+Copy
+Edit
+        1
+       / \
+      2   3
+     / \     
+    4   5  
+In this tree:
+
+Longest path is: 4 → 2 → 1 → 3
+
+Number of edges = 3
+
+So, diameter = 3
+
