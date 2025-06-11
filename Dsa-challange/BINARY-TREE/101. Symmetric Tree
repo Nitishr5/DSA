@@ -1,0 +1,135 @@
+#include <iostream>
+#include <queue>
+using namespace std;
+
+struct TreeNode {
+    int val;
+    TreeNode* left;
+    TreeNode* right;
+
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+
+bool isSymmetric(TreeNode* root) {
+    if (!root) return true;
+
+    queue<TreeNode*> q;
+    q.push(root);
+    q.push(root);
+
+    while (!q.empty()) {
+        TreeNode* t1 = q.front(); q.pop();
+        TreeNode* t2 = q.front(); q.pop();
+
+        if (!t1 && !t2) continue;
+        if (!t1 || !t2) return false;
+        if (t1->val != t2->val) return false;
+
+        q.push(t1->left);
+        q.push(t2->right);
+
+        q.push(t1->right);
+        q.push(t2->left);
+    }
+
+    return true;
+}
+
+
+
+
+
+
+
+DRY RYN======================>>>>>>>>>>>>>>>>>>>>
+
+       1
+      / \
+     2   2
+    / \ / \
+   3  4 4  3
+TreeNode values:
+root = 1
+
+root->left = 2, root->right = 2
+
+root->left->left = 3, root->left->right = 4
+
+root->right->left = 4, root->right->right = 3
+
+📌 Start with the queue:
+We push the root node twice:
+
+cpp
+Copy
+Edit
+queue: [1, 1]
+🔁 1st Iteration:
+t1 = 1, t2 = 1
+
+Both not null and equal → OK
+
+Push: t1->left = 2, t2->right = 2
+
+Push: t1->right = 2, t2->left = 2
+
+cpp
+Copy
+Edit
+queue: [2, 2, 2, 2]
+🔁 2nd Iteration:
+t1 = 2, t2 = 2
+
+Both not null and equal → OK
+
+Push: t1->left = 3, t2->right = 3
+
+Push: t1->right = 4, t2->left = 4
+
+cpp
+Copy
+Edit
+queue: [2, 2, 3, 3, 4, 4]
+🔁 3rd Iteration:
+t1 = 2, t2 = 2
+
+Both not null and equal → OK
+
+Push: t1->left = 4, t2->right = 4
+
+Push: t1->right = 3, t2->left = 3
+
+cpp
+Copy
+Edit
+queue: [3, 3, 4, 4, 4, 4, 3, 3]
+🔁 4th Iteration:
+t1 = 3, t2 = 3
+
+Equal → OK
+
+Push NULL children (both are leaves)
+
+cpp
+Copy
+Edit
+queue: [4, 4, 4, 4, 3, 3, NULL, NULL, NULL, NULL]
+🔁 5th Iteration:
+t1 = 4, t2 = 4 → OK
+
+Push NULL children
+
+cpp
+Copy
+Edit
+queue: [4, 4, 3, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL]
+🔁 6th Iteration:
+t1 = 4, t2 = 4 → OK
+
+🔁 Remaining Iterations:
+All pairs are NULL → continue
+
+Eventually, the queue is empty.
+
+✅ Conclusion:
+Since we never returned false, the function returns true.
