@@ -111,3 +111,167 @@ python
 Copy
 Edit
 # Leftmost node
+
+
+
+
+CODE PART======================================================>>>>>>>>>>>>>>>>>>>>
+
+#include <iostream>
+using namespace std;
+
+// Node structure for BST
+struct Node {
+    int key;
+    Node* left;
+    Node* right;
+
+    Node(int val) {
+        key = val;
+        left = right = NULL;
+    }
+};
+
+// Insert node into BST
+Node* insert(Node* root, int key) {
+    if (!root) return new Node(key);
+
+    if (key < root->key)
+        root->left = insert(root->left, key);
+    else
+        root->right = insert(root->right, key);
+
+    return root;
+}
+
+// Function to find predecessor and successor
+void findPreSuc(Node* root, Node*& pre, Node*& suc, int key) {
+    if (!root) return;
+
+    if (root->key == key) {
+        // Predecessor = rightmost of left subtree
+        if (root->left) {
+            Node* temp = root->left;
+            while (temp->right)
+                temp = temp->right;
+            pre = temp;
+        }
+
+        // Successor = leftmost of right subtree
+        if (root->right) {
+            Node* temp = root->right;
+            while (temp->left)
+                temp = temp->left;
+            suc = temp;
+        }
+    }
+    else if (key < root->key) {
+        suc = root;
+        findPreSuc(root->left, pre, suc, key);
+    }
+    else {
+        pre = root;
+        findPreSuc(root->right, pre, suc, key);
+    }
+}
+
+// Driver code
+int main() {
+    /* Example BST:
+            20
+           /  \
+         10    30
+        /  \     \
+       5   15    40
+    */
+
+    Node* root = NULL;
+    root = insert(root, 20);
+    insert(root, 10);
+    insert(root, 5);
+    insert(root, 15);
+    insert(root, 30);
+    insert(root, 40);
+
+    int key = 20;
+    Node* pre = NULL;
+    Node* suc = NULL;
+
+    findPreSuc(root, pre, suc, key);
+
+    if (pre)
+        cout << "Predecessor of " << key << " is " << pre->key << endl;
+    else
+        cout << "No Predecessor\n";
+
+    if (suc)
+        cout << "Successor of " << key << " is " << suc->key << endl;
+    else
+        cout << "No Successor\n";
+
+    return 0;
+}
+
+
+
+
+
+
+🔍 Output for key = 20:
+csharp
+Copy
+Edit
+Predecessor of 20 is 15
+Successor of 20 is 30
+
+
+
+
+
+
+
+
+
+
+
+
+exmple 2=>>
+
+
+🌳 Example BST:
+markdown
+Copy
+Edit
+         50
+        /  \
+      30    70
+     /  \   / \
+   20   40 60  80
+🔁 Inorder Traversal:
+Inorder = 20 → 30 → 40 → 50 → 60 → 70 → 80
+
+🔍 Let's find predecessor and successor for various nodes:
+1️⃣ For node 50:
+Predecessor = 40 (rightmost in left subtree)
+
+Successor = 60 (leftmost in right subtree)
+
+2️⃣ For node 30:
+Predecessor = 20
+
+Successor = 40
+
+3️⃣ For node 20:
+Predecessor = None
+
+Successor = 30
+
+4️⃣ For node 70:
+Predecessor = 60
+
+Successor = 80
+
+5️⃣ For node 80:
+Predecessor = 70
+
+Successor = None
