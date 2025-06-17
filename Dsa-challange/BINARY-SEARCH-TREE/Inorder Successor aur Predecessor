@@ -1,0 +1,113 @@
+Inorder Predecessor & Inorder Successor in a Binary Search Tree (BST)
+In a Binary Search Tree (BST), the inorder traversal visits nodes in sorted (ascending) order.
+Given a node in a BST:
+
+Inorder Predecessor is the node that comes just before the given node in the inorder traversal.
+
+Inorder Successor is the node that comes just after the given node in the inorder traversal.
+
+🔍 Definitions
+✅ Inorder Predecessor:
+The largest node in the left subtree of the given node.
+
+If there’s no left subtree, then go up the tree until you find a node which is right child of its parent — then that parent is the predecessor.
+
+✅ Inorder Successor:
+The smallest node in the right subtree of the given node.
+
+If there’s no right subtree, then go up the tree until you find a node which is left child of its parent — then that parent is the successor.
+
+🧠 Example BST
+
+        20
+       /  \
+     10    30
+    /  \     \
+   5   15    40
+For node 20:
+
+Inorder Predecessor = 15 (rightmost in left subtree)
+
+Inorder Successor = 30 (leftmost in right subtree)
+
+For node 10:
+
+Inorder Predecessor = 5
+
+Inorder Successor = 15
+
+For node 5:
+
+Inorder Predecessor = None (no left and no parent where 5 is right child)
+
+Inorder Successor = 10
+
+
+
+
+
+
+
+
+
+🔁 Inorder Traversal (BST):
+Inorder traversal ka matlab hota hai:
+Left → Root → Right
+
+✅ Inorder Successor aur Predecessor ka Rule:
+🔷 Inorder Successor:
+Woh node hoti hai jo turant baad aati hai (inorder traversal mein)
+
+Agar node ke right subtree hai:
+→ Us right subtree ka leftmost node hota hai successor
+
+🔶 Inorder Predecessor:
+Woh node hoti hai jo turant pehle aati hai (inorder traversal mein)
+
+Agar node ke left subtree hai:
+→ Us left subtree ka rightmost node hota hai predecessor
+
+📘 Example Tree:
+markdown
+Copy
+Edit
+        20
+       /  \
+     10    30
+    /  \     \
+   5   15    40
+🔍 Inorder Traversal of This Tree:
+5 → 10 → 15 → 20 → 30 → 40
+
+Now let's find successor and predecessor for node 20:
+
+🔷 Successor of 20:
+20 ke right subtree me kya hai? → 30
+
+30 ke left me kuch hai? ❌ (nahi hai)
+
+Toh leftmost node of right subtree = 30
+
+✅ Successor of 20 = 30
+
+🔶 Predecessor of 20:
+20 ke left subtree me kya hai? → 10
+
+10 ke right me kya hai? → 15
+
+Rightmost node of left subtree = 15
+
+✅ Predecessor of 20 = 15
+
+🎯 Leftmost aur Rightmost kaise nikaalte hain?
+✅ Leftmost (Successor ke liye):
+Kisi node se start karo
+
+Jab tak left hai:
+
+Left me jaate jao
+
+python
+Copy
+Edit
+# Leftmost node
