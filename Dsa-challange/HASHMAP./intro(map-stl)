@@ -1,0 +1,52 @@
+#include <iostream>
+#include<map>
+#include<unordered_map>
+using namespace std;
+int main() {
+    //creation
+    unordered_map<string,int> m;
+    
+    //insertion
+    
+    //1 type of insertion of data 
+    pair<string,int> p=make_pair("Nitish",3);
+    m.insert(p);
+    
+    //2
+    pair<string,int> p2("babbar",2);
+    m.insert(p2);
+    
+    //3
+    m["mera"]=1;
+    
+    m["mera"]=2; //aise karenge to mera 1 ki jgah pr mera 2 ho jayega
+    
+    
+    //Searching 
+    cout<<m["mera"]<<endl;
+    cout<<m.at("Nitish")<<endl;
+    
+    //size
+    cout<<m.size()<<endl;
+    
+    //to check presence
+    cout<<m.count("Nitish")<<endl;
+        //this count()  return 1 if value is pregence else return 0 value not pregent
+    
+    //erase
+    m.erase("Nitish");
+    cout<<m.size()<<endl;
+    
+    
+    
+    
+    //iterator
+    unordered_map<string,int>::iterator it=m.begin();
+    
+    while(it!=m.end()){
+        cout<<it->first<<" "<<it->second<<endl;
+        it++;
+    }  // isme data random order me print hoga agar hm map ka use krte to data order from me print hota but uska TC=log(n) hoga unorder kaa O(1) constant.
+
+    return 0;
+}
