@@ -1,3 +1,10 @@
+HashMap in C++
+In C++, a hashmap is commonly referred to as an unordered_map, which is part of the Standard Template Library (STL). It stores elements as key-value pairs and allows for fast retrieval of values based on their associated keys using a hash function.
+ The unordered_map provides constant time average complexity for insertion, deletion, and lookup operations.
+
+
+
+
 #include <iostream>
 #include<map>
 #include<unordered_map>
