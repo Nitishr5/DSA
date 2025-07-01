@@ -1,0 +1,63 @@
+Given a sorted array (may contain negative numbers), return a new array containing squares of all the numbers in sorted order.
+
+Example:
+Input: [-4, -1, 0, 3, 10]
+Output: [0, 1, 9, 16, 100]
+
+🔍 Logic (Two Pointer):
+Left pointer at start (l = 0)
+
+Right pointer at end (r = n-1)
+
+Compare absolute values:
+
+Square the larger of abs(arr[l]) or abs(arr[r])
+
+Place result at the end of result array
+
+Move the pointer accordingly
+
+Continue until l <= r
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+vector<int> sortedSquares(vector<int>& nums) {
+    int n = nums.size();
+    vector<int> result(n);
+    int l = 0, r = n - 1;
+    int idx = n - 1;
+
+    while (l <= r) {
+        if (abs(nums[l]) > abs(nums[r])) {
+            result[idx--] = nums[l] * nums[l];
+            l++;
+        } else {
+            result[idx--] = nums[r] * nums[r];
+            r--;
+        }
+    }
+    return result;
+}
+
+int main() {
+    vector<int> arr = {-4, -1, 0, 3, 10};
+    vector<int> ans = sortedSquares(arr);
+
+    for (int num : ans)
+        cout << num << " ";
+    return 0;
+}
