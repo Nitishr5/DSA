@@ -1,0 +1,52 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int removeDuplicates(vector<int>& nums) {
+    int i = 0;
+
+    for (int j = 1; j < nums.size(); j++) {
+        if (nums[j] != nums[i]) {
+            i++;
+            nums[i] = nums[j];  // move unique element forward
+        }
+    }
+
+    return i + 1;
+}
+
+int main() {
+    vector<int> nums = {1, 1, 2, 2, 3, 3, 3, 4};
+    int newLength = removeDuplicates(nums);
+
+    cout << "New length: " << newLength << endl;
+    cout << "Modified array: ";
+    for (int i = 0; i < newLength; i++) {
+        cout << nums[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+🔍 Dry Run:
+
+Initial: i = 0, j = 1
+
+Step:
+j=1 → arr[j]==arr[i] (1==1) → skip
+j=2 → 2!=1 → i++, arr[i]=2 → i=1
+j=3 → 2==2 → skip
+j=4 → 3!=2 → i++, arr[i]=3 → i=2
+j=5 → 3==3 → skip
+j=6 → 3==3 → skip
+j=7 → 4!=3 → i++, arr[i]=4 → i=3
+
+Return i+1 = 4
