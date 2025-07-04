@@ -1,0 +1,43 @@
+LEET CODE 11. Container With Most Water
+
+
+int maxArea(vector<int>& height) {
+    int left = 0, right = height.size() - 1;
+    int maxA = 0;
+
+    while (left < right) {
+        int h = min(height[left], height[right]);
+        int w = right - left;
+        maxA = max(maxA, h * w);
+
+        if (height[left] < height[right])
+            left++;
+        else
+            right--;
+    }
+
+    return maxA;
+}
+
+
+
+
+🧪 Dry Run:
+
+height = [1,8,6,2,5,4,8,3,7]
+         ↑                ↑
+       left              right
+Step	left	right	height[left]	height[right]	min(h1,h2)	width	Area	maxA
+1	0	8	1	7	1	8	8	8
+2	1	8	8	7	7	7	49	49
+3	1	7	8	3	3	6	18	49
+4	1	6	8	8	8	5	40	49
+5	1	5	8	4	4	4	16	49
+6	1	4	8	5	5	3	15	49
+7	1	3	8	2	2	2	4	49
+8	1	2	8	6	6	1	6	49
+9	1	1						✅ Done
+
+🔚 Final Answer:
+
+maxA = 49
