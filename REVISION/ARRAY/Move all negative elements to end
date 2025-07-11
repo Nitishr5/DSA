@@ -38,3 +38,56 @@ class Solution {
         // return arr[i];
     }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Ye Approach Kab Lagega? (Use Cases)
+1. Move negative elements to end (preserving order)
+Jaise tu abhi kiya:
+
+cpp
+Copy
+Edit
+arr = [1, -2, 3, -4, 5]  
+👉 Output: [1, 3, 5, -2, -4]
+2. Separate 0s and 1s (or any binary condition) while preserving order
+cpp
+Copy
+Edit
+arr = [1, 0, 1, 0, 1]  
+👉 Output: [1, 1, 1, 0, 0]
+Yahan bhi stable partitioning lagega if order matter karta hai.
+
+3. Segregate even and odd numbers
+cpp
+Copy
+Edit
+arr = [2, 4, 1, 3, 5, 6]  
+👉 Output: [2, 4, 6, 1, 3, 5]
+Even pehle, odd baad mein, but same order maintain karni ho to yehi approach chalega.
+
+4. Partition based on any condition
+Jaise:
+
+All vowels before consonants in a string
+
+All high scores (>50) before low scores
+
+All uppercase letters before lowercase letters
+
+Condition bas itna hai: Agar order maintain karni hai, to temporary array (or vector) use karna best rehta hai.
+
