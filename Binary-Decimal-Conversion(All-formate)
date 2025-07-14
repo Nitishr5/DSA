@@ -1,0 +1,70 @@
+IN LINKD-LIST BINARY TO DECIMAL CONVERSION LEET-CODE==>1290.
+
+Input: head = [1,0,1]
+Output: 5
+Explanation: (101) in base 2 = (5) in base 10.
+
+
+class Solution {
+public:
+    int getDecimalValue(ListNode* head) {
+        int result=0;
+        while(head!=NULL){
+            result=result*2+head->val;
+            head=head->next;
+        }
+    return result;
+    }
+};
+
+
+
+
+
+
+
+
+
+
+<<<<<<<<<<<<<++++++++++++++++++   IN ARRAY  FORMATE  ****************************************>>>>>>>>>>>>>>>>>>>
+
+#include <iostream>
+using namespace std;
+int main() {
+    // Write C++ code here
+   int arr[]={1,0,0,1,1};
+   int result=0;
+ for(int i=0;i<5;i++)
+   {
+       result=result*2+arr[i];
+   }
+   cout<<result;
+}
+
+
+
+
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< IN NORMAL NUMBER >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num = 101;  // Input as a binary-looking decimal
+    int result = 0;
+    int base = 1;   // 2^0
+
+    while (num > 0) {
+        int last_digit = num % 10;
+        result += last_digit * base;
+        base *= 2;
+        num /= 10;
+    }
+
+    cout << "Decimal value: " << result << endl;
+    return 0;
+}
+
