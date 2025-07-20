@@ -1,0 +1,41 @@
+
+THIS  IS SOME OPTIMAL APPROCH USING unordered_set
+
+
+
+#include <iostream>
+#include <unordered_set>
+using namespace std;
+
+bool isSubset(int a[], int b[], int n, int m) {
+    unordered_set<int> elements;
+
+    // Step 1: Put all elements of a[] into the set
+    for (int i = 0; i < n; i++) {
+        elements.insert(a[i]);
+    }
+
+    // Step 2: Check all elements of b[] in the set
+    for (int i = 0; i < m; i++) {
+        if (elements.find(b[i]) == elements.end()) {
+            return false;  // b[i] not found in a[]
+        }
+    }
+
+    return true;  // All elements found
+}
+
+int main() {
+    int a[] = {11, 1, 13, 21, 3, 7};
+    int b[] = {11, 3, 7, 1};
+
+    int n = sizeof(a)/sizeof(a[0]);
+    int m = sizeof(b)/sizeof(b[0]);
+
+    if (isSubset(a, b, n, m))
+        cout << "b is a subset of a";
+    else
+        cout << "b is not a subset of a";
+
+    return 0;
+}
