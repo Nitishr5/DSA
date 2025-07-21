@@ -1,0 +1,27 @@
+#include <iostream>
+#include <unordered_set>
+using namespace std;
+
+int main() {
+    unordered_set<int> uset;
+
+    uset.insert(10);
+    uset.insert(20);
+    uset.insert(30);
+
+    cout << "Size: " << uset.size() << endl; // 3
+
+    if (uset.count(20)) {
+        cout << "20 is present" << endl;
+    }
+
+    if (uset.find(10) != uset.end()) {
+        cout << "10 found, erasing it" << endl;
+        uset.erase(10);
+    }
+
+    uset.clear();
+    cout << "Empty? " << uset.empty() << endl; // 1
+
+    return 0;
+}
