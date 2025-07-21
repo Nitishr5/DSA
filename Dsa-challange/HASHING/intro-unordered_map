@@ -1,0 +1,52 @@
+#include <iostream>
+#include <unordered_map>
+using namespace std;
+
+int main() {
+    unordered_map<string, int> mp;
+
+    mp["apple"] = 5;
+    mp["banana"] = 3;
+
+    cout << "Apple quantity: " << mp["apple"] << endl;
+
+    if (mp.count("banana")) {
+        cout << "Banana is available" << endl;
+    }
+
+    mp.erase("apple");
+
+    for (auto it : mp) {
+        cout << it.first << " -> " << it.second << endl;
+    }
+
+    mp.clear();
+    cout << "Map size after clear: " << mp.size() << endl;
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| Function               | Description                     |
+| ---------------------- | ------------------------------- |
+| `mp[key] = value`      | Value set karta hai             |
+| `insert({key, value})` | Key-value pair insert karta hai |
+| `count(key)`           | 0 ya 1 return (key exists?)     |
+| `find(key)`            | Iterator return karta hai       |
+| `erase(key)`           | Key ko hata deta hai            |
+| `clear()`              | Map empty karta hai             |
+| `size()`               | Kitne key-value pairs hain      |
+| `empty()`              | Check if map is empty           |
