@@ -1,0 +1,47 @@
+Examples :
+
+Input: arr = [1, 1, 1, 1, 1], x = 1
+Output: 5
+Explanation: Frequency of 1 is 5.
+Input: arr = [1, 2, 3, 3, 2, 1], x=2
+Output: 2
+Explanation: Frequency of 2 is 2.
+
+
+
+
+
+class Solution {
+  public:
+    int findFrequency(vector<int> arr, int x) {
+        // Your code here
+        unordered_map<int,int>freq;
+        for(num:arr){
+            freq[num]++;
+        }
+        return freq[x];
+    }
+};
+
+
+
+
+
+
+
+BRUT FORCE APPROCH USING LOOP=======================>>>>>>>>>>>>>>
+
+class Solution {
+  public:
+    int findFrequency(vector<int> arr, int x) {
+        // Your code here
+        int n=arr.size();
+        int cnt=0;
+       for(int i=0;i<n;i++)
+       {
+           if(arr[i]==x)
+           cnt++;
+       }
+       return cnt;
+    }
+};
