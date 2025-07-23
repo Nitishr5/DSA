@@ -1,0 +1,45 @@
+#include <iostream>
+#include <unordered_map>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> arr = {1, 3, 2, 1, 4, 1};
+
+    unordered_map<int, int> freq;
+
+    // Step 1: Count frequencies
+    for (int num : arr) {
+        freq[num]++;
+    }
+
+    // Step 2: Find most frequent element
+    int maxFreq = 0;
+    int mostFreqElement = -1;
+
+    for (auto it : freq) {
+        if (it.second > maxFreq) {
+            maxFreq = it.second;
+            mostFreqElement = it.first;
+        }
+    }
+
+    cout << "Most frequent element is: " << mostFreqElement << " (frequency = " << maxFreq << ")" << endl;
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+1 -> 3  
+3 -> 1  
+2 -> 1  
+4 -> 1
+
+Most frequent element is: 1 (frequency = 3)
