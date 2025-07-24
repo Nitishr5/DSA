@@ -1,0 +1,32 @@
+arr1 = {1, 2, 3, 4}  
+arr2 = {4, 3, 2, 1}  
+Output: Yes
+
+Hint: Count frequencies of both arrays in 2 maps and compare.
+
+
+
+#include <iostream>
+#include<unordered_map>
+using namespace std;
+int main() {
+    int arr[]={1,2,4,1,1,2,6,8};
+    int arr1[]={8,6,2,1,4,1,2,1};
+unordered_map<int,int> freq;
+unordered_map<int,int> freq2;
+for(int num:arr)
+{
+    freq[num]++;
+}
+for(int n:arr1)
+{
+    freq2[n]++;
+}
+if(freq==freq2)
+{
+    cout<<"Array are equale ";
+}
+else {
+    cout<<"Array are not equal";
+}
+}
