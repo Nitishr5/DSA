@@ -1,0 +1,31 @@
+#include <iostream>
+#include<unordered_map>
+#include <cctype>
+using namespace std;
+int main() {
+    // Write C++ code here
+   string num="hello";
+
+   unordered_map<char,int>freq;
+   
+   for(char ch:num)
+   {
+       freq[ch]++;
+   }
+   
+   for(auto pair:freq)
+   {
+       cout<<pair.first<<"->"<<pair.second<<endl;
+   }
+   
+}
+
+
+
+
+OUTPUT====>
+
+  h:1
+  e:1
+  l:2
+  o:1
