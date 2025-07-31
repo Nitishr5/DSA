@@ -66,6 +66,12 @@ int main() {
         }
     }
 
+
+
+
+
+OUTPUT==>> Element with max frequency: 3 (3 times)
+
     cout << "Element with max frequency: " << maxElement << " (" << maxFreq << " times)" << endl;
 
     return 0;
