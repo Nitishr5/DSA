@@ -1,0 +1,27 @@
+THIS IS GFG PROBLEM ===========================================>>>>>>>>>>>>>>>
+
+
+Input: a[] = [1, 2, 5, 4, 0], b[] = [2, 4, 5, 0, 1]
+Output: true
+Explanation: Both the array can be rearranged to [0,1,2,4,5]
+
+
+
+class Solution {
+  public:
+    vector<int> findUnion(vector<int>& a, vector<int>& b) {
+        // code here
+        unordered_set<int>st;
+  for(int i:a){
+      st.insert(i);
+  }
+  for(int i:b){
+      st.insert(i);
+  }
+  
+  vector<int>result(st.begin(),st.end());
+  
+  sort(result.begin(),result.end());
+  return result;
+    }
+};
