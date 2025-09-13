@@ -1,0 +1,20 @@
+lass Solution {
+  public:
+    // Function to count the number of digits in n that evenly divide n
+    int evenlyDivides(int n) {
+        // code here
+        int cnt=0;
+        while(n>0)
+        {
+          
+            cnt=cnt+1;
+            n=n/10;
+        }
+        return cnt;
+        
+    }
+};
+
+// iteration is based on division time complexity will be logrithmi.
+// if in solution n=n/10 O(log10(N))
+//if in solution n=n/5 O(log5(N)) 
