@@ -24,3 +24,14 @@ public:
         return count <= 1;
     }
 };
+
+
+
+
+
+
+✅ Time & Space Complexity:
+
+Time: O(n)
+
+Space: O(1)
