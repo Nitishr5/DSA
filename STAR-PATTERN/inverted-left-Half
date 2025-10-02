@@ -5,7 +5,8 @@ int main() {
  {
      for(int j=0;j<5;j++)
      {
-         if(j>=i)
+         if(j>=i)    // OR if(j<=6-i)
+
          cout<<"*";
      }
      cout<<endl;
