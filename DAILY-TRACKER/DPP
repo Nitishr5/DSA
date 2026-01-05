@@ -2,3 +2,6 @@ THIS IS DAILY TRACKER TO WHAT DO ON THAT'S DATE===================>>>>>
 
 02/01/2026==> Sort 0s 1s 2s GFG & Leet-code--> 75. Sort Colors
 03/01/2026==> move all negetive number at begining of array
+04/01/2026===>
+05/01/2026===> Merge 2 Sorted Arrays--> isme brut force approch use krte hai to TWO pointer se A=[1,2,3,0,0,0] B=[2,5,6]  isko c=[] me daal denge compare kr ke   , But isme ek extra space lega
+              
