@@ -4,4 +4,39 @@ THIS IS DAILY TRACKER TO WHAT DO ON THAT'S DATE===================>>>>>
 03/01/2026==> move all negetive number at begining of array
 04/01/2026===>
 05/01/2026===> Merge 2 Sorted Arrays--> isme brut force approch use krte hai to TWO pointer se A=[1,2,3,0,0,0] B=[2,5,6]  isko c=[] me daal denge compare kr ke   , But isme ek extra space lega
-              
+06/01/1016===> Leet-code 977. Squares of a Sorted Array => Brut-force--,
+    vector<int> sortedSquares(vector<int>& nums) {
+        int n=nums.size();
+        vector<int>square(n);
+        for(int i=0;i<n;i++){
+            square[i] = nums[i]*nums[i];
+        }
+        sort(square.begin(),square.end());
+        return square;
+    }      ---------* This take T.C=> O(n log n).       for loop n time---> O(n)
+                                                        sort() function =logn 
+
+OPTIMAL APPROCH=====================>> Two pointer approch tak T.C=> O(n)
+
+    vector<int> sortedSquares(vector<int>& nums) {
+        int n = nums.size();
+    vector<int> result(n);
+
+    int left = 0, right = n - 1;
+    int pos = n - 1;
+
+    while (left <= right) {
+        int leftSq = nums[left] * nums[left];
+        int rightSq = nums[right] * nums[right];
+
+        if (leftSq > rightSq) {
+            result[pos--] = leftSq;
+            left++;
+        } else {
+            result[pos--] = rightSq;
+            right--;
+        }
+    }
+
+    return result;
+    }
