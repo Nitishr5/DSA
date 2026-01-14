@@ -1,0 +1,61 @@
+
+Example 1:
+
+Input: nums = [0,1,0,3,12]
+Output: [1,3,12,0,0]
+
+Input: arr[] = [1, 2, 0, 4, 3, 0, 5, 0]
+Output: [1, 2, 4, 3, 5, 0, 0, 0]
+
+
+WE SOLVE THIS PROBLEM USING 2-POINTER APPROCH===========>>>>>>
+
+class Solution {
+  public:
+    void pushZerosToEnd(vector<int>& arr) {
+        // code here
+        int n=arr.size();
+        int j=0;
+        for(int i=0;i<n;i++){
+            if(arr[i]!=0){
+                swap(arr[i],arr[j]);
+                j++;
+            }
+        }
+    }
+};
+
+
+
+
+
+
+
+******************** ANOTHER APPROCH IS USING 2-LOOP   ************
+
+// User function template for C++
+class Solution {
+  public:
+    void pushZerosToEnd(vector<int>& arr) {
+        // code here
+        int j=0;
+        int n=arr.size();
+        
+        for(int i=0;i<n;i++)
+        {
+            if(arr[i]!=0){
+           arr[j]=arr[i];
+            j++;
+        }
+        }
+        
+        while(j<n)
+        {
+            arr[j]=0;
+            j++;
+        }
+    }
+};
+
+
+    BOTH SOLUTION HAVE===>  O(n)  O(1)  TIME COMPLAXITY..
