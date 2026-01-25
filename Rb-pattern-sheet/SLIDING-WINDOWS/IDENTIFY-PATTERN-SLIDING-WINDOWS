@@ -1,0 +1,75 @@
+🧠 STEP 1: Question padhte hi keywords pakdo
+
+Agar question mein yeh words dikhein:
+
+Subarray / Substring
+ 
+Continuous / contiguous
+
+Largest / smallest / longest / minimum
+
+Sum / count / condition
+
+👉 99% chance sliding window
+
+❌ “Subsequence” likha ho → sliding window nahi
+
+🧠 STEP 2: Fixed ya Variable ka decision
+🔹 FIXED SIZE sliding window kab?
+
+Question bole:
+
+“Subarray of size K”
+
+“Window size given”
+
+“Exactly K elements”
+
+📌 Example:
+
+Maximum sum subarray of size K
+
+👉 Fixed window
+
+🔹 VARIABLE SIZE sliding window kab?
+
+Question bole:
+
+“At least / at most”
+
+“Minimum / maximum length”
+
+“Condition satisfy ho”
+
+📌 Example:
+
+Sum ≥ target
+
+At most K distinct
+
+Longest substring without repeating
+
+👉 Variable window
+
+🧠 STEP 3: Sliding window possible hai ya nahi?
+
+Yeh golden check hai 👑
+
+Array mein:
+
+✔️ All positive numbers → sliding window works
+❌ Negative numbers → sliding window fail (mostly)
+
+String mein:
+
+✔️ Mostly always works
+
+🧠 STEP 4: Kaunsa variable window?
+
+Yeh dekho 👇
+
+Question bole → “MINIMUM”
+jab condition true → shrink window
+
+Question bole → “MAXIMUM / LONGEST”
+jab condition false → shrink window
