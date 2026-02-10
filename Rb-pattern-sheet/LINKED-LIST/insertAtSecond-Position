@@ -1,0 +1,9 @@
+void insertAtSecond(Node* &head, Node* node) {
+    if (head == NULL) {
+        cout << "List empty, 2nd position possible nahi\n";
+        return;
+    }
+
+    node->next = head->next;
+    head->next = node;
+}
