@@ -1,0 +1,30 @@
+
+class Solution {
+  public:
+    Node *insertPos(Node *head, int pos, int val) {
+        // code here
+       Node *newNode=new Node(val);
+       
+          if(pos == 1) {
+            newNode->next = head;
+            return newNode;
+        }
+       
+       Node* temp = head;
+
+    for(int i = 1; i < pos - 1 && temp!=NULL; i++) {
+        temp = temp->next;    // pos-1 tak ja rahe hain
+    }
+    
+      if(temp == NULL) {
+            return head;
+        }
+
+    newNode->next = temp->next;
+    temp->next = newNode;
+
+    return head;
+
+      
+    }
+};
