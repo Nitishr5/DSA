@@ -1,0 +1,87 @@
+🧠 1️⃣ Universal Traversal Template
+
+Har linked list question ka base ye hai:
+
+Node* temp = head;
+
+while(temp != NULL) {
+    // kaam yaha karo
+    temp = temp->next;
+}
+
+
+⚠️ temp = temp->next; kabhi mat bhoolna.
+
+🧠 2️⃣ Insert Template (1-based position)
+Node* insert(Node* head, int pos, int val) {
+
+    Node* newNode = new Node(val);
+
+    if(pos == 1) {
+        newNode->next = head;
+        return newNode;
+    }
+
+    Node* temp = head;
+
+    for(int i = 1; i < pos - 1; i++)
+        temp = temp->next;
+
+    newNode->next = temp->next;
+    temp->next = newNode;
+
+    return head;
+}
+
+
+👉 Pattern yaad rakho:
+
+newNode->next = temp->next;
+temp->next = newNode;
+
+🧠 3️⃣ Delete Template (1-based position)
+Node* deleteNode(Node* head, int pos) {
+
+    if(pos == 1)
+        return head->next;
+
+    Node* temp = head;
+
+    for(int i = 1; i < pos - 1; i++)
+        temp = temp->next;
+
+    temp->next = temp->next->next;
+
+    return head;
+}
+
+
+👉 Pattern yaad rakho:
+
+temp->next = temp->next->next;
+
+🧠 4️⃣ Count / Search Template
+int count(Node* head, int key) {
+
+    int cnt = 0;
+    Node* temp = head;
+
+    while(temp != NULL) {
+        if(temp->data == key)
+            cnt++;
+
+        temp = temp->next;
+    }
+
+    return cnt;
+}
+
+🔥 Golden Rules (Exam/Interview Hack)
+
+Head change ho sakta hai → return head.
+
+Position 1-based hai to pos == 1 special case.
+
+Pointer ko aage badhana mat bhoolo.
+
+->data compare karo, pointer ko nahi.
