@@ -1,0 +1,33 @@
+Input: x = 1, input: 8->2->3->1->7 Output: 2 -> 3 -> 1 -> 7 Explanation: After deleting the node at the 1st position (1-base indexing), the linked list is as
+
+
+
+
+
+
+
+
+
+class Solution {
+  public:
+    Node* deleteNode(Node* head, int x) {
+        // code here
+   
+        if(x==1)
+        {
+            
+            return head->next;
+        }
+        
+        Node* temp = head;
+        
+      for(int i=1;i<x-1 ;i++)
+          temp=temp->next;
+          
+          temp->next=temp->next->next;
+          
+          return head;
+      
+     
+    }
+};
