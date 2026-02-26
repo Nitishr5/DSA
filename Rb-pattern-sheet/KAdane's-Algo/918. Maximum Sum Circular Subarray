@@ -1,0 +1,38 @@
+SAME WHI CODE RAHEGA BS MAXIMUM & MINIMUM KO 
+
+
+
+
+
+
+
+
+
+
+
+class Solution {
+public:
+    int maxSubarraySumCircular(vector<int>& nums) {
+        int totalSum=0;
+        int maxEnding=0,maxSum=INT_MIN;
+        int minEnding=0,minSum=INT_MAX;
+
+        for(int num:nums){
+            totalSum+=num;
+
+            //maxSubarray
+            maxEnding=max(num,maxEnding+num);
+            maxSum=max(maxSum,maxEnding);
+
+            //min Subarray
+            minEnding=min(num,minEnding+num);
+            minSum=min(minSum,minEnding);
+        }
+
+        //in case: all array are negetive number
+        if(maxSum<0)
+            return maxSum;
+
+        return max(maxSum,totalSum-minSum);
+    }
+};
