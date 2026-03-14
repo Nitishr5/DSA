@@ -3,3 +3,6 @@ START PREFIX SUM PATTERN=====>>>
 
 11-3-21==>>  238. Product of Array Except Self  (kiya to hu but aache se clear nhi hua hai).
 13-3-25==> 66. Plus One  
+15-3-25==> 26. Remove Duplicates from Sorted Array    ( agar arr[i] != arr[j]
+                                                         j++
+                                                       arr[j] = arr[i]  )
