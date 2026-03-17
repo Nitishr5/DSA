@@ -6,3 +6,6 @@ START PREFIX SUM PATTERN=====>>>
 15-3-25==> 26. Remove Duplicates from Sorted Array    ( agar arr[i] != arr[j]
                                                          j++
                                                        arr[j] = arr[i]  )
+
+
+17-3-26===> LEET-CODE 1047 ISME PROBLEM HAI KI STACK KA PPROBLEM KI JI LAST ELEMENT PUSH HUA  HAI WO AUR  JO NEW PUSH HONE WALA HAI KYA  WO SAME HAI
