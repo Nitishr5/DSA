@@ -1,0 +1,44 @@
+In the case of an Armstrong number of 3 digits, the sum of cubes of each digit is equal to the number itself. For example, 153 is an Armstrong number because
+
+153 = 1*1*1 + 5*5*5 + 3*3*3 
+Agar ye multiply orignal number ke brabar == hai to armstrong number else not
+
+
+
+
+
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+int main() {
+    // Write C++ code here
+    
+    int n;
+  cout<<"Enter 3 digit number";
+  cin>>n;
+  
+  int originalnum=n,result=0;
+  
+  while(originalnum!=0)
+  {
+      //remainder contain last digit number
+     int  remainder=originalnum%10;
+      
+       result+=remainder*remainder*remainder;
+      
+      //removeing last digit of number
+      originalnum/=10;
+  }
+  
+  if(result==n){
+      cout<<n<<" is Aramstrong number ";
+  }
+  else{
+      cout<<n<<" is not armstrong number";
+  }
+}
