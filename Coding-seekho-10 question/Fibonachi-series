@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+int main() {
+    // Write C++ code here
+  int t1=0,t2=1;
+  int nextTerm=t1+t2;
+  
+  int n;
+  cout<<"Enter the number of term ";
+  cin>>n;
+  
+  cout<<"Fibonachi Series are: "<<t1<<t2;
+  
+  for(int i=3;i<n;i++)
+  {
+      cout<<nextTerm<<" ";
+      
+      t1=t2;
+      t2=nextTerm;
+      nextTerm=t1+t2;
+  }
+}
+
+
+
+// output=========>>>>>  Enter the number of term 10
+                          Fibonachi Series are: 011 2 3 5 8 13 21 
