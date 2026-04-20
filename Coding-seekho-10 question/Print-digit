@@ -1,0 +1,20 @@
+EX=> num=
+
+#include <iostream>
+using namespace std;
+int main() {
+  int n=53127;
+  
+  while(n!=0){
+      int digit=n%10;
+      
+     cout<<digit<<" ";
+      //last digit remove
+      n=n/10;
+      
+  }
+} 
+
+
+
+ // EK EK KR KE DIGIT PRINT HOGA 
