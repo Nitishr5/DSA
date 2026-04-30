@@ -1,0 +1,101 @@
+pshudo code for ======================>>>
+
+first largest=======
+arr[]={3,2,1,5,2}
+
+largest=arr[0];
+for(int i=0;i<n;i++){
+if(arr[i]>largest)
+   largest=arr[i];
+cout<<largest;
+
+
+
+
+2nd largest======>>>>
+arr={3,2,1,5,5,2};
+Brute force sort the array 
+
+arr= 1,2,2,3,5,5
+
+largest= arr[n-1]   
+ sort karne ke baad largest last wala hota hai to usse phle wale ka dekha jaata hai ki kya ye usse km hai hai  to whi answer nhi to --
+
+for(int  i=n-2;i>=0;i--)
+{
+    if(arr[i]!=largest)
+{
+  secondlargest=arr[i];
+break;
+}
+}
+
+
+
+ye bhi Brut force hi hai 2nd largest ke liye==================================>>>>>>>>>>>>>>
+
+
+#include <iostream>
+#include <climits>
+using namespace std;
+
+int main() {
+    int arr[] = {3, 2, 1, 5, 2};
+    int n = 5;
+
+    int firstlarge = INT_MIN;
+    int seclarge = INT_MIN;
+
+    // Find largest
+    for(int i = 0; i < n; i++) {
+        if(arr[i] > firstlarge) {
+            firstlarge = arr[i];
+        }
+    }
+
+    // Find second largest
+    for(int i = 0; i < n; i++) {
+        if(arr[i] > seclarge && arr[i] < firstlarge) {
+            seclarge = arr[i];
+        }
+    }
+
+    cout << seclarge;
+}
+
+
+
+
+
+
+
+
+Check the number is sorted================================>
+
+arr[]={1,2,2,3,3,4}
+
+for(int i=1;i<n;i++)
+{
+if(arr[i]>=arr[i-1])
+{
+}
+else
+  return false;
+}
+return true;
+
+
+
+
+
+
+
+
+REMOVE DUPLICATE FROM SORTED ARRAY===>
+
+arr[]={1,1,2,2,2,3,3};
+
+set<int>st;
+for(int i=0;i<n;i++)
+      st.insert(arr[i]);
+
